@@ -1,0 +1,62 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Books – CodeFires</title>
+</head>
+
+<body>
+<!-- container for showing book lists -->
+<div class="container">
+    <h1>Books</h1>
+    {% if books %}
+        <div class="book-list">
+            {% for book in books %}
+                <div class="card mb-3">
+                    <img src="{{ book.image.url }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ book.title }}</h5>
+                        <p class="card-text">{{ book.description }}</p>
+                        <p class="card-text"><small class="text-muted">{{ book.author }}</small></p>
+                    </div>
+                </div>
+            {% endfor %}
+            {% if page_obj.has_next %}
+                <p class="pagination">
+                    <a class="next-page" href="?page={{ page_obj.next_page_number }}">More...</a>
+                </p>
+            {% endif %}
+        </div>
+    {% else %}
+        <p>There are no any books uploaded yet!!!</p>
+    {% endif %}
+</div>
+
+<!-- jQuery CDN hosted by Google -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- jScroll plug-in CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jscroll/2.4.1/jquery.jscroll.min.js"></script>
+
+<script>
+    jQuery(function ($) {
+        var $list = $('.book-list');
+        $list.jscroll({
+            loadingHtml: '<div class="text-center">' +
+                '<img src="{% static 'img/loading.gif' %}" alt="Loading" />' +
+                '</div>',
+            padding: 100,
+            pagingSelector: '.pagination',
+            nextSelector: 'a.next-page:last',
+            contentSelector: '.card,.pagination'
+        });
+    });
+</script>
+</body>
+</html>
