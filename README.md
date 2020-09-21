@@ -14,3 +14,5 @@ python manage.py migrate
 ```python
 python manage.py runserver
 ```
+## Output
+![Implement An Infinite Scrolling With Django](https://frontend.codefires.com/images/infinite-scrolling-django.gif)
