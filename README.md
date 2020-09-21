@@ -5,12 +5,12 @@ __This is the simple example for the project discussed in the blog post: [Implem
 ```javascript
 git clone https://github.com/thecodefires/infinite-scrolling-django.git
 ```
-```javascript
+```python
 pip install -r requirements.txt
 ```
-```javascript
+```python
 python manage.py migrate
 ```
-```javascript
+```python
 python manage.py runserver
 ```
