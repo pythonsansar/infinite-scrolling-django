@@ -3,7 +3,7 @@ __This is the simple example for the project discussed in the blog post: [Implem
 
 ## To run this project follow these steps:
 ```javascript
-git clone https://github.com/thecodefires/infinite-scrolling-django.git
+git clone https://github.com/pythonsansar/infinite-scrolling-django.git
 ```
 ```python
 pip install -r requirements.txt
@@ -14,5 +14,3 @@ python manage.py migrate
 ```python
 python manage.py runserver
 ```
-## Output
-![Implement An Infinite Scrolling With Django](https://frontend.codefires.com/images/infinite-scrolling-django-js.gif)
